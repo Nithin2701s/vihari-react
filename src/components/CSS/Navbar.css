@@ -1,0 +1,31 @@
+.logo {
+    font-weight: bolder;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+.logo span {
+    color: #06bbcc;
+  }
+  * {
+    font-family: "Nunito", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
+  } 
+a.nav-link {
+    color: #fff;
+    margin: 0 0.8rem;
+  }
+a.nav-link:hover {
+    color: #06bbcc;
+  }
+a.nav-link.active:hover {
+    color: #06bbcc;
+}  
+  
