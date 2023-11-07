@@ -3,7 +3,7 @@
     color: white;
     text-transform: uppercase;
   }
-  
+
 .logo span {
     color: #06bbcc;
   }
@@ -18,6 +18,24 @@
     text-decoration: none;
     transition: all 0.2s linear;
   } 
+
+  input.search{
+    border-radius: 2rem;
+    border: 0.2rem solid #29d9d5;
+    background: none;
+    color: white;
+    margin-left: 2rem;
+    height: 30px;
+}
+input.search:focus{
+  background: none;
+}
+
+input.search::placeholder{
+color:#90b3b3;
+font-size: small;
+font-weight: 200;
+}
 a.nav-link {
     color: #fff;
     margin: 0 0.8rem;
@@ -28,4 +46,4 @@ a.nav-link:hover {
 a.nav-link.active:hover {
     color: #06bbcc;
 }  
-  
+
