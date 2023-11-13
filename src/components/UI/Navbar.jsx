@@ -4,7 +4,7 @@ import {Link, useNavigate} from 'react-router-dom'
 const Navbar = () => {
    const navigate =useNavigate()
     return (
-      <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
+      <nav className="navbar  bg-dark navbar-dark">
       <div className="container-fluid">
         <Link className="navbar-brand logo" to="/"><span>V</span>ihari</Link>
         <form className="d-flex mx-5" role="search">
@@ -23,7 +23,7 @@ const Navbar = () => {
         <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div className="offcanvas-body">
-        <ul className="navbar-nav  flex-grow-1 pe-3">
+        <ul className="navbar-nav justify-content-end  flex-grow-1 pe-3">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">Home</Link>
             </li>
