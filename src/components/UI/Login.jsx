@@ -7,7 +7,7 @@ import userContext from '../../context/User/userContext'
 
 const Login = () => {
 	const navigate=useNavigate()
-	const {verifyUser} = useContext(userContext)
+	const {verifyUser,createUser} = useContext(userContext)
 	const [loginCreds, setloginCreds] = useState({email:'',password:''})
     const onLoginInput =(e)=>{
       setloginCreds({...loginCreds,[e.target.name]:e.target.value})
@@ -27,6 +27,31 @@ const Login = () => {
       setloginCreds({email:'',password:''}) 
 	
 	}
+	const [SignupCreds, setSignupCreds] = useState({fname:'',lname:'',email:'',password:'',cpassword:''})
+    const onSignupInput =(e)=>{
+      setSignupCreds({...SignupCreds,[e.target.name]:e.target.value})
+	}
+	const HandleSignup =async(e)=>{
+        e.preventDefault()
+	  const {fname,lname,email,password,cpassword} = SignupCreds
+	   if(password!==cpassword){
+       alert('Password mismatch')
+	   }	
+	   else {
+
+       const response = await createUser(fname,lname,email,password)
+		 if(response.success){
+		 localStorage.token=response.authToken	
+		   navigate('/')
+		 }
+		 else {
+			if(response.error){
+		alert(response.error)	
+			}
+		 }
+      setSignupCreds({name:'',lname:'',email:'',password:''}) 
+	 }
+	}
   return (
 	<>
     <div className="login-body">
@@ -36,12 +61,12 @@ const Login = () => {
 		<div className="signup">
 			<form>
 				<label htmlFor="chk" aria-hidden="true">Sign up</label>
-				<input className='signup-input' type="text" name="txt" placeholder="First name" required=""/>
-				<input className='signup-input' type="text" name="txt" placeholder="Last name" required=""/>
-				<input className='signup-input' type="email" name="email" placeholder="Email" required=""/>
-				<input className='signup-input' type="password" name="pswd" placeholder="Password" required=""/>
-				<input className='signup-input' type="password" name="cpswd" placeholder="Confirm Password" required=""/>
-				<button className='login-submit'>Sign up</button>
+				<input className='signup-input' type="text" name="fname" onChange={onSignupInput} placeholder="First name" required=""/>
+				<input className='signup-input' type="text" name="lanme" onChange={onSignupInput}  placeholder="Last name" required=""/>
+				<input className='signup-input' type="email" name="email" onChange={onSignupInput} placeholder="Email" required=""/>
+				<input className='signup-input' type="password" name="password" onChange={onSignupInput} placeholder="Password" required=""/>
+				<input className='signup-input' type="password" name="cpassword" onChange={onSignupInput} placeholder="Confirm Password" required=""/>
+				<button className='login-submit' onClick={HandleSignup}>Sign up</button>
 			</form>
 		</div>
 
