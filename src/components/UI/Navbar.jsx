@@ -8,19 +8,22 @@ const Navbar = () => {
       <div className="container-fluid">
         <Link className="navbar-brand logo" to="/"><span>V</span>ihari</Link>
         <form className="d-flex mx-5" role="search">
-            {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-            <button className="btn btn-outline-success" type="submit">Search</button> */}
         <input name="tname" className="form-control me-2 search" type="search" placeholder="Search Tours" aria-label="Search"
         id="header-search-bar" />
       <button className="btn1" type="submit" style={{color: '#06bbcc',backgroundColor: 'transparent'}}>
         <i className="fa fa-search"></i>
       </button>
           </form>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i className="fas fa-hamburger" style={{color: '#bbbbbb'}}></i>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <i className="fas fa-hamburger" style={{color: '#bbbbbb'}}></i>
+    </button>
+        <div className="offcanvas offcanvas-end text-bg-dark" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div className="offcanvas-header">
+        <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">VIHARI</h5>
+        <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div className="offcanvas-body">
+        <ul className="navbar-nav  flex-grow-1 pe-3">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">Home</Link>
             </li>
@@ -50,6 +53,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+      </div>
       </div>
     </nav>
     )
