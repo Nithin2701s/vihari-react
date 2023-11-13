@@ -4,10 +4,11 @@ const User = require('./models/user');
 const bcrypt = require('bcryptjs')
 const JWT =require("jsonwebtoken")
 const {validationResult, body } = require('express-validator');
-
+const cors =require('cors')
 const JWT_SECRET = "VihariTravelSite"
 const app = express()
 app.use(express.json())
+app.use(cors())
 app.post('/login',[
     body('email','Not a valid email address').isEmail(),
     body('password',"password required").exists()

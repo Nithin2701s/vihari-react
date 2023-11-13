@@ -1,17 +1,41 @@
+import { useContext, useState } from 'react'
 import '../CSS/Login.css'
 import Footer from './Footer'
+import { useNavigate } from 'react-router-dom'
+import userContext from '../../context/User/userContext'
+
 
 const Login = () => {
+	const navigate=useNavigate()
+	const {verifyUser} = useContext(userContext)
+	const [loginCreds, setloginCreds] = useState({email:'',password:''})
+    const onLoginInput =(e)=>{
+      setloginCreds({...loginCreds,[e.target.name]:e.target.value})
+	}
+	const HandleLogin =async(e)=>{
+        e.preventDefault()
+       const response = await verifyUser(loginCreds.email,loginCreds.password)
+		 if(response.success){
+		 localStorage.token=response.authToken	
+		   navigate('/')
+		 }
+		 else {
+			if(response.error){
+		alert(response.error)	
+			}
+		 }
+      setloginCreds({email:'',password:''}) 
 	
+	}
   return (
 	<>
     <div className="login-body">
-	<div class="main">  	
+	<div className="main">  	
 	<input className='login-input' type="checkbox" id="chk" aria-hidden="true"/>
 
-		<div class="signup">
+		<div className="signup">
 			<form>
-				<label for="chk" aria-hidden="true">Sign up</label>
+				<label htmlFor="chk" aria-hidden="true">Sign up</label>
 				<input className='signup-input' type="text" name="txt" placeholder="First name" required=""/>
 				<input className='signup-input' type="text" name="txt" placeholder="Last name" required=""/>
 				<input className='signup-input' type="email" name="email" placeholder="Email" required=""/>
@@ -21,12 +45,12 @@ const Login = () => {
 			</form>
 		</div>
 
-		<div class="login">
+		<div className="login">
 			<form>
-				<label for="chk" aria-hidden="true">Login</label>
-				<input className='login-input' type="email" name="email" placeholder="Email" required=""/>
-				<input className='login-input' type="password" name="pswd" placeholder="Password" required=""/>
-				<button className='login-submit'>Login</button>
+				<label htmlFor="chk" aria-hidden="true">Login</label>
+				<input className='login-input' type="email" name="email" onChange={onLoginInput} value={loginCreds.email} placeholder="Email" required/>
+				<input className='login-input' type="password" name="password" onChange={onLoginInput} value={loginCreds.password} placeholder="Password" required/>
+				<button className='login-submit' onClick={HandleLogin}>Login</button>
 			</form>
 		</div>
 </div>
