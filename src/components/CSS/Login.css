@@ -26,7 +26,7 @@ div.login-body{
 	height: 100%;
 }
 label{
-	color: #fff;
+	color: #d9dad7;
 	font-size: 2.3em;
 	justify-content: center;
 	display: flex;
@@ -35,9 +35,9 @@ label{
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
-input{
+input.signup-input{
 	width: 60%;
-	height: 20px;
+	height: 35px;
 	background: #e0dede;
 	justify-content: center;
 	display: flex;
@@ -47,14 +47,29 @@ input{
 	outline: none;
 	border-radius: 5px;
 }
-button{
+input.login-input{
+	width: 60%;
+	height: 35px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+input.login-input::placeholder{
+	color: rgb(77, 58, 109);
+}
+button.login-submit{
 	width: 60%;
 	height: 40px;
 	margin: 10px auto;
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #573b8a;
+	background: #4e11b2;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -64,7 +79,7 @@ button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
-button:hover{
+button.login-submit:hover{
 	background: #6d44b8;
 }
 .login{

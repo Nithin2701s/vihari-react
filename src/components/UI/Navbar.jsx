@@ -45,7 +45,7 @@ const Navbar = () => {
               <Link className="nav-link" to="/">Contact</Link>
             </li>
             <li className="nav-item">
-            <Link className="nav-link" to="/">{!localStorage.token?<><i className="fa fa-user mx-2" aria-hidden="true" id="login-btn"></i>Login</>:<><i className="fa fa-sign-out mx-2" aria-hidden="true" id="login-btn"></i>Logout</>}</Link>
+            <Link className="nav-link" to="/login">{!localStorage.token?<><i className="fa fa-user mx-2" aria-hidden="true" id="login-btn"></i>Login</>:<><i className="fa fa-sign-out mx-2" aria-hidden="true" id="login-btn"></i>Logout</>}</Link>
             </li>
           </ul>
         </div>
