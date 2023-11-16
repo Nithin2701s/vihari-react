@@ -27,7 +27,6 @@ const UserState = (props) => {
       // Creating user with api call 
       const res = await fetch(`${host}/signup`,{
         method:"POST",
-        mode:'no-cors',
         headers:{
           "Content-Type":"application/json"
         },
@@ -40,6 +39,7 @@ const UserState = (props) => {
         })
         const response =await res.json()
         return response
+
   }
 
   return (

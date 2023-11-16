@@ -52,16 +52,15 @@ module.exports.createUser = async(req,res)=>{
             password: secPass
         }).then(user => {
 
-
           // Creating authToken for user
   
           const authToken =JWT.sign(user.id,JWT_SECRET)
-          res.json({authToken})
+          res.json({success:true,authToken})
   
         }).catch((error) => {
             console.log(error);
             // sending errors
-            res.send("Internal server error");
+            res.json({error:"Internal server error"});
           })
         }
       })

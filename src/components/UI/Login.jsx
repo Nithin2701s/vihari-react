@@ -61,11 +61,11 @@ const Login = () => {
 		<div className="signup">
 			<form>
 				<label htmlFor="chk" aria-hidden="true">Sign up</label>
-				<input className='signup-input' type="text" name="fname" onChange={onSignupInput} placeholder="First name" required=""/>
-				<input className='signup-input' type="text" name="lanme" onChange={onSignupInput}  placeholder="Last name" required=""/>
-				<input className='signup-input' type="email" name="email" onChange={onSignupInput} placeholder="Email" required=""/>
-				<input className='signup-input' type="password" name="password" onChange={onSignupInput} placeholder="Password" required=""/>
-				<input className='signup-input' type="password" name="cpassword" onChange={onSignupInput} placeholder="Confirm Password" required=""/>
+				<input className='signup-input' type="text" name="fname" onChange={onSignupInput} value={SignupCreds.fname} placeholder="First name" required=""/>
+				<input className='signup-input' type="text" name="lname" onChange={onSignupInput} value={SignupCreds.lname}  placeholder="Last name" required=""/>
+				<input className='signup-input' type="email" name="email" onChange={onSignupInput} value={SignupCreds.email} placeholder="Email" required=""/>
+				<input className='signup-input' type="password" name="password" onChange={onSignupInput} value={SignupCreds.password} placeholder="Password" required=""/>
+				<input className='signup-input' type="password" name="cpassword" onChange={onSignupInput} value={SignupCreds.cpassword} placeholder="Confirm Password" required=""/>
 				<button className='login-submit' onClick={HandleSignup}>Sign up</button>
 			</form>
 		</div>
