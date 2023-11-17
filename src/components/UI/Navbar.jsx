@@ -40,7 +40,7 @@ const Navbar = () => {
               <Link className="nav-link" to="/">Contact</Link>
             </li>
             <li className="nav-item icon">
-              {!localStorage.getItem('token')? <Link className="nav-link" to="/login"><i className="fa fa-user mx-2" aria-hidden="true" id="login-btn"></i></Link>:<Link className="nav-link" to="/" onClick={()=>{localStorage.removeItem('token');navigate('/')}}><i className="fa fa-sign-out mx-2" aria-hidden="true" id="login-btn"></i>Logout</Link>}
+              {!localStorage.getItem('token')? <Link className="nav-link" to="/login"><i className="fa fa-user mx-2" aria-hidden="true" id="login-btn"></i></Link>:<Link className="nav-link" to="/" onClick={()=>{localStorage.removeItem('token');navigate('/')}}><i className="fa fa-sign-out mx-2" aria-hidden="true" id="login-btn"></i>Logout</Link>} 
               {/* <Link className="nav-link" to="/login">{!localStorage.token ? <><i className="fa fa-user mx-2" aria-hidden="true" id="login-btn"></i></> : <><i className="fa fa-sign-out mx-2" aria-hidden="true" id="login-btn"></i>Logout</>}</Link> */}
             </li>
           </ul>
