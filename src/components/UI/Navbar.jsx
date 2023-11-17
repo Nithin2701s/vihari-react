@@ -1,7 +1,8 @@
 import React from 'react'
 import '../CSS/Navbar.css'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 const Navbar = () => {
+  const navigate=useNavigate()
   return (
     <div class="navbar-header">
       <Link className="navbar-brand logo" to="/"><span>V</span>ihari</Link>
@@ -39,7 +40,8 @@ const Navbar = () => {
               <Link className="nav-link" to="/">Contact</Link>
             </li>
             <li className="nav-item icon">
-              <Link className="nav-link" to="/login">{!localStorage.token ? <><i className="fa fa-user mx-2" aria-hidden="true" id="login-btn"></i></> : <><i className="fa fa-sign-out mx-2" aria-hidden="true" id="login-btn"></i>Logout</>}</Link>
+              {!localStorage.getItem('token')? <Link className="nav-link" to="/login"><i className="fa fa-user mx-2" aria-hidden="true" id="login-btn"></i></Link>:<Link className="nav-link" to="/" onClick={()=>{localStorage.removeItem('token');navigate('/')}}><i className="fa fa-sign-out mx-2" aria-hidden="true" id="login-btn"></i>Logout</Link>}
+              {/* <Link className="nav-link" to="/login">{!localStorage.token ? <><i className="fa fa-user mx-2" aria-hidden="true" id="login-btn"></i></> : <><i className="fa fa-sign-out mx-2" aria-hidden="true" id="login-btn"></i>Logout</>}</Link> */}
             </li>
           </ul>
         </div>

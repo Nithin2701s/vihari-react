@@ -60,7 +60,7 @@ const Login = () => {
 
 		<div className="signup">
 			<form>
-				<label htmlFor="chk" aria-hidden="true">Sign up</label>
+				<label htmlFor="chk" className='login-label' aria-hidden="true">Sign up</label>
 				<input className='signup-input' type="text" name="fname" onChange={onSignupInput} value={SignupCreds.fname} placeholder="First name" required=""/>
 				<input className='signup-input' type="text" name="lname" onChange={onSignupInput} value={SignupCreds.lname}  placeholder="Last name" required=""/>
 				<input className='signup-input' type="email" name="email" onChange={onSignupInput} value={SignupCreds.email} placeholder="Email" required=""/>
@@ -72,7 +72,7 @@ const Login = () => {
 
 		<div className="login">
 			<form>
-				<label htmlFor="chk" aria-hidden="true">Login</label>
+				<label htmlFor="chk" className='login-label' aria-hidden="true">Login</label>
 				<input className='login-input' type="email" name="email" onChange={onLoginInput} value={loginCreds.email} placeholder="Email" required/>
 				<input className='login-input' type="password" name="password" onChange={onLoginInput} value={loginCreds.password} placeholder="Password" required/>
 				<button className='login-submit' onClick={HandleLogin}>Login</button>
