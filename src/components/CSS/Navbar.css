@@ -44,5 +44,92 @@ a.nav-link:hover {
   }
 a.nav-link.active:hover {
     color: #06bbcc;
-}  
+}  * {
+  font-family: "Nunito", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+.navbar-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #343a40;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  cursor: pointer;
+  font-size: 2rem;
+  height: 80px;
+}
+
+.navbar-header .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: white;
+  text-transform: uppercase;
+}
+
+.navbar-header .logo span {
+  color: #06bbcc;
+}
+
+.navbar-header .search{
+  border-radius: 2rem;
+  border: 0.2rem solid #29d9d5;
+  background: none;
+  width: 200px;
+  color: white;
+}
+
+.navbar-header .searchtext ::placeholder{
+  color: #aea5a5;
+}
+
+.btn1{
+  display: flex;
+  margin-right: 2rem;
+}
+
+.navbar-header .navbar a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 0.8rem;
+}
+
+.navbar-header .navbar a:hover {
+  color: #06bbcc;
+  text-transform: uppercase;
+}
+
+.navbar-header .icon i {
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  padding-left: 2.5rem;
+}
+
+.navbar-header .icon i:hover {
+  color: #06bbcc;
+}
 
