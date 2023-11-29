@@ -20,6 +20,9 @@ div.login-body{
 #chk{
 	display: none;
 }
+.main .signup form{
+	height: 100%;
+}
 .signup{
 	position: relative;
 	width:100%;
