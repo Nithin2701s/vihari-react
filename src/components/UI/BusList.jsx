@@ -3,6 +3,7 @@ import bus1 from '../../Assets/bus1.png';
 import bus3 from '../../Assets/bus3.jpg';
 import bus5 from '../../Assets/bus5.jpg';
 import Layout from './Layout'
+import Footer from './Footer';
 const BusList = () => {
   const [selectedBusName, setSelectedBusName] = useState();
   const [showSeats, setShowSeats] = useState(false);
@@ -29,7 +30,7 @@ const BusList = () => {
     <> 
    <div className="container-fluid mt-5">
       <h2 className="text-center mb-4">Bus List</h2>
-      <table className="table" style={{ fontSize: '60px', padding: '5px' }}>
+      <table className="table" style={{ padding: '5px' }}>
         <thead>
          <tr>
             <th scope="col">Bus Image</th>
@@ -66,22 +67,21 @@ const BusList = () => {
               </td>
             </tr>
             <tr>
-              <td colSpan='7' className='text-center'><div className='container text-center'>
+              <td colSpan='7' className='text-center' >
             {showSeats && selectedBusName === bus.name && (
                     <div>
-                      <h3 className="text-center mb-3">Seat Layout for {selectedBusName}</h3>
+                      <h5 className="text-center mb-3">Seat Layout for {selectedBusName}</h5>
                       <Layout bus={bus}/>
                     </div>
                   )}
-          </div></td>
+              </td>
             </tr>
            </>
           ))}
         </tbody>
       </table>
-
-
     </div>
+    <Footer/>
     </>
   );
 };

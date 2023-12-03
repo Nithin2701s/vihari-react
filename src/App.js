@@ -17,15 +17,13 @@ import AllBuses from './components/UI/AllBuses';
 import EditBus from './components/UI/EditBus';
 import AllUsers from './components/UI/AllUsers';
 import AddUser from './components/UI/AddUser';
-<<<<<<< HEAD
+
 import BusList from './components/UI/BusList';
-=======
 import AddTour from './components/UI/AddTour';
 import AllTours from './components/UI/AllTours';
 import EditTour from './components/UI/EditTour';
 import TourDetails from './components/UI/TourDetails';
 import AddPlace from './components/UI/AddPlace';
->>>>>>> 2330f316aea8d6e309b7af9c5abb93f73b0afa2f
 
 function App() {
   return (

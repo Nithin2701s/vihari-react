@@ -1,16 +1,17 @@
 .bus-layout{
 width: 80%;
+border :2px solid grey
 }
 
 
-tbody, td, tfoot, th, thead, tr{
+tbody, td, tfoot, th, thead{
   border:none;
 }
 table,.table{
   box-shadow: none;
 }
 tr.bus-row{
- box-shadow: -2px -1px 4px rgb(67, 51, 51) 
+ box-shadow: -2px -3px 4px rgb(67, 51, 51) 
 }
 ol.seats {
   list-style: none;
