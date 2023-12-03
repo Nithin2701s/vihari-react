@@ -1,5 +1,17 @@
 {
-  "buses": [],
+  "buses": [
+    {
+      "srcname": "chennai",
+      "destname": "Sullurpeta",
+      "bname": "IIITS TRAVELS",
+      "deptime": "19:25",
+      "arrtime": "21:26",
+      "durtime": "23:28",
+      "tktprice": "2500",
+      "btype": "AC",
+      "id": 1
+    }
+  ],
   "users": [
     {
       "firstName": "AMBULA",
@@ -8,6 +20,31 @@
       "password": "Sailu@3002",
       "confirmPassword": "Sailu@3002",
       "id": 2
+    }
+  ],
+  "tours": [
+    {
+      "tourName": "Mumbai",
+      "tourPrice": "9000",
+      "imagePath": "/Mumbai.jpg",
+      "places": [
+        {
+          "title": "Marine Drive",
+          "description": "Marine Drive is the most easily identifiable landmark associated with Mumbai and is indicative of the glamor and glitter of the city. It is essentially 3.6 km long, arc-shaped boulevard along the South Mumbai coast that starts at the southern end of Nariman Point and ends at Girgaum Chowpatty, popularly known as Chowpatty Beach. The coast wraps the Arabian sea and is the best place in Mumbai to watch the sunset or even to just take a leisurely stroll by the sea any time of the day or night. At night, when the whole coastline lights up, it justifies its other moniker i.e. Queen's Necklace.",
+          "imagePath": "/MarineDrive.jpg"
+        },
+        {
+          "title": "Elephant Caves",
+          "description": "A UNESCO World Heritage Site, Elephanta Caves is a specimen of rock-cut art and architecture from the times of medieval India. The caves are located on the Elephanta or Gharapuri island which is situated at a distance of 11 km from the city of Mumbai. Natively known as Gharapurichi Leni, the Elephanta Caves that exist today are ruins of what were once elaborately painted artworks. It also provides an amazing view of the Mumbai skyline. You can reach the Elephanta Caves via a ferry ride from Gateway of India. This collection of cave temples dates back to 5th to 7th centuries and most of them are dedicated to Lord Shiva",
+          "imagePath": "/elephantCaves.jpg"
+        },
+        {
+          "title": "Juhu Beach",
+          "description": "Juhu Beach is located on the shores of the Arabian Sea. It stretches for six kilometres up to Versova. The short, rocky formations make up the Juhu Beach unlike the Marina Beach in Chennai that is primarily sandy. It is a tourist attraction throughout the year and is also a destination for shooting films.",
+          "imagePath": "/JuhuBeach.jpg"
+        }
+      ],
+      "id": 1
     }
   ]
 }

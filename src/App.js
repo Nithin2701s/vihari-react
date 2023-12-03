@@ -17,6 +17,11 @@ import AllBuses from './components/UI/AllBuses';
 import EditBus from './components/UI/EditBus';
 import AllUsers from './components/UI/AllUsers';
 import AddUser from './components/UI/AddUser';
+import AddTour from './components/UI/AddTour';
+import AllTours from './components/UI/AllTours';
+import EditTour from './components/UI/EditTour';
+import TourDetails from './components/UI/TourDetails';
+import AddPlace from './components/UI/AddPlace';
 
 function App() {
   return (
@@ -31,9 +36,15 @@ function App() {
 
           <Route exact path='/admindb/allbuses' element={<AllBuses/>} />
           <Route exact path='/admindb/allusers' element={<AllUsers/>} />
+          <Route exact path='/admindb/alltours' element={<AllTours/>}/>
           <Route exact path='/admindb/addbus' element={<AddBus/>}/>
           <Route exact path='/admindb/adduser' element={<AddUser/>}/>
+          <Route exact path='/admindb/addtour' element={<AddTour/>}/>
+          <Route exact path='/admindb/addplace/:id' element={<AddPlace/>}/>
           <Route exact path="/admindb/editbus/:id" element={ <EditBus/>}/>
+          <Route exact path="/admindb/edittour/:id" element={ <EditTour/>}/>
+          <Route exact path="/admindb/opentour/:id" element={ <TourDetails/>}/>
+
         </Routes>
     </Router>
     </UserState>

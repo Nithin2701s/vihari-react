@@ -23,6 +23,8 @@ const AllBuses = () => {
     getAllBuses();
   }, []);
   const handleDeleteBus = (busId) => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this bus?');
+    if (confirmDelete) {
     fetch(`http://localhost:8000/buses/${busId}`, {
       method: "DELETE",
     })
@@ -33,6 +35,7 @@ const AllBuses = () => {
       .catch((err) => {
         console.log(err.message);
       });
+    }
   };
   return (
     <div>

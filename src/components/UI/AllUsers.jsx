@@ -15,6 +15,8 @@ const AllUsers = () => {
   }, []);
 
   const handleDeleteUser = (userId) => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this user?');
+    if (confirmDelete) {
     fetch(`http://localhost:8000/users/${userId}`, {
         method: "DELETE",
       })
@@ -25,6 +27,7 @@ const AllUsers = () => {
         .catch((err) => {
           console.log(err.message);
         });
+      }
   };
 
   return (
