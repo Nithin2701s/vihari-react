@@ -1,0 +1,13 @@
+{
+  "buses": [],
+  "users": [
+    {
+      "firstName": "AMBULA",
+      "lastName": "SRIKAR",
+      "email": "srikar.a21@iiits.in",
+      "password": "Sailu@3002",
+      "confirmPassword": "Sailu@3002",
+      "id": 2
+    }
+  ]
+}
