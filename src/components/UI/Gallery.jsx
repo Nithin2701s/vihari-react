@@ -65,7 +65,7 @@ const Gallery = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-8" style={{ marginLeft: '350px', marginTop: '-500px' }}>
+                                    <div className="col-md-8" style={{ marginLeft: '420px', marginTop: '-500px' }}>
                                         <div className="filtr-item">
                                             <img src={destinations[5].image} alt={destinations[0].name} />
                                             <div className="item-title">

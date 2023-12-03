@@ -4,7 +4,7 @@ import '../CSS/TravelPage.css';
 
 const TravelPage = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid travel-page">
       <div className="position-relative">
         <img src="../b2.jpg" alt="" className="banner img-fluid" style={{ height: '700px', position: 'relative' }} />
         <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">

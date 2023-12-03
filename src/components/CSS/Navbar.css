@@ -7,6 +7,7 @@
   border: none;
   text-decoration: none;
   transition: all 0.2s linear;
+  font-size:62.5%;
 }
 
 html {
@@ -19,7 +20,21 @@ html {
 section {
   padding: 2rem 9%;
 }
-
+.navbar-brand{
+  font-size:30px;
+}
+ul.navbar-nav{
+  font-size: 30px;
+}
+button.btn-close{
+  font-size: 15px;
+}
+i.fa-hamburger{
+  font-size:30px;
+}
+i.fa-search,input.search{
+  font-size: 20px;
+}
 .navbar-header {
   position: relative;
   top: 0;
