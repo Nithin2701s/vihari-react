@@ -17,6 +17,7 @@ import AllBuses from './components/UI/AllBuses';
 import EditBus from './components/UI/EditBus';
 import AllUsers from './components/UI/AllUsers';
 import AddUser from './components/UI/AddUser';
+import BusList from './components/UI/BusList';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route exact path='/login' element={ <Login/>}/>
           <Route exact path='/layout' element={ <Layout/>}/>
           <Route exact path='/tours' element={<Tours/>}/>
+          <Route exact  path='/buses' element={<BusList/>}/>
 
           <Route exact path='/admindb/allbuses' element={<AllBuses/>} />
           <Route exact path='/admindb/allusers' element={<AllUsers/>} />
