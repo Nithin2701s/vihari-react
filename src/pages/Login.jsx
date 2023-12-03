@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react'
-import '../CSS/Login.css'
-import Footer from './Footer'
+import '../components/CSS/Login.css'
+import Footer from '../components/UI/Footer'
 import { useNavigate } from 'react-router-dom'
-import userContext from '../../context/User/userContext'
+import userContext from '../context/User/userContext'
 
 
 const Login = () => {

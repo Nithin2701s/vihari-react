@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs')
 const User = require('../models/user')
-const JWT =require("jsonwebtoken")
+const JWT = require("jsonwebtoken")
 const JWT_SECRET = "VihariTravelSite"
 
 module.exports.verifyUser =  async(req,res)=>{
