@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AdminNavbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark" id="navbar" style={{ backgroundColor: '#222271' }}>
+    <nav className="navbar navbar-expand-lg navbar-dark" id="navbar" style={{ backgroundColor: '#222271',fontSize:'20px',padding:'10px' }}>
       <Link className="navbar-brand" to="/">
         <i className="fa fa-bus" aria-hidden="true"></i>
       </Link>
@@ -40,16 +40,14 @@ const AdminNavbar = () => {
           </li>
           {/* Add more navbar items here */}
         </ul>
-
         <form id="frmLogout" action="/admin"></form>
-
-        <ul className="navbar-nav ml-auto">
+        <ul className="navbar-nav ml-auto" style={{marginLeft:'150px'}}>
           <li className="nav-item">
             <span className="nav-link">
               Welcome, <b>Admin</b>!
             </span>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" style={{marginLeft:'370px'}}>
             <Link className="nav-link" to="/">
               <i className="fa fa-sign-out" aria-hidden="true"></i>
               Sign Out

@@ -3,19 +3,14 @@
     flex-direction: row;
     gap: 1rem;
     margin-top: 2rem;
-
 }
-.profile-image{
-    background-color: rgb(226, 101, 101);
-    width:25%;
-    height:10rem;
-    overflow: hidden;
+.profile-image img{
+    width: 100px;
+    height: 100px;
 }
 .profile-content{
     background-color: white;
     width:70%;
-
-
 }
 .profile-content h1{
     margin-left:2rem;

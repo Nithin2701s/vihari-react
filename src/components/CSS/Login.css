@@ -30,7 +30,7 @@ div.login-body{
 }
 label.login-label{
 	color: #d9dad7;
-	font-size: 2.3em;
+	font-size: 3em;
 	justify-content: center;
 	display: flex;
 	margin: 60px;
@@ -65,6 +65,12 @@ input.login-input{
 input.login-input::placeholder{
 	color: rgb(77, 58, 109);
 }
+.signup input::placeholder{
+	font-size: 1.5em;
+}
+.login input::placeholder{
+	font-size: 1.5em;
+}
 button.login-submit{
 	width: 60%;
 	height: 40px;
@@ -73,7 +79,7 @@ button.login-submit{
 	display: block;
 	color: #fff;
 	background: #4e11b2;
-	font-size: 1em;
+	font-size: 15px;
 	font-weight: bold;
 	margin-top: 20px;
 	outline: none;

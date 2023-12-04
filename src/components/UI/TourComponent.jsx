@@ -9,7 +9,7 @@ const TourComponent = ({ image, name, price, duration, accommodation, transporta
         <img src={image} alt="package-place" />
         <div className="single-package-item-txt">
           <h3 style={{color:'#3995a3'}}>{name} <span className="pull-right">₹{price}</span></h3>
-          <div className="packages-para" style={{marginLeft:'-110px'}}>
+          <div className="packages-para">
             <p>
               <i className="fa fa-angle-right"></i> {duration}
             </p>

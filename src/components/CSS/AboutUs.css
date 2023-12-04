@@ -1,28 +1,21 @@
 .aboutUs{
     width: 80%;
     background-color:#151FAC;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     margin-left:10%;
     margin-right:10%;
     height:6rem;
-    color: white;
-
-
-
-    
+    color: white; 
 }
-h1{
+.aboutUs h1{
     padding: 0;
     margin-top: 0;
-    font-weight: 500;
     font-size: 2rem;
     margin-left: 12rem;
     margin-bottom: 0;
-
+    font-size: 30px;
 }
-p{
+.aboutUs p{
     margin-left: 12rem;
     margin-top: 0;
+    font-size: 10px;
 }

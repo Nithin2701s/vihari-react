@@ -51,7 +51,7 @@ const AddUser = () => {
     <div><AdminNavbar/>
     <div className="login-body">
       <div className="main">
-        <div className="container signup">
+        <div className="container signup" style={{marginTop:"150px"}}>
           <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-md-6">

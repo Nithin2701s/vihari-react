@@ -45,12 +45,11 @@ const AddTour = () => {
     <div><AdminNavbar/>
     <div className="login-body">
       <div className="main">
-        <div className="container signup">
+        <div className="container signup" style={{marginTop:'200px'}}>
           <form onSubmit={handleSubmit}>
             <div className="row ">
               <div className="">
-                <div className="row login-row">
-                  
+                <div className="row login-row" style={{display:'flex',flexDirection:'column',marginLeft:'100px',width:'450px'}}>
                   <div className="col-md-6">
                     <div className="input-group mb-3 user">
                       <span className="input-group-text span">
@@ -108,7 +107,7 @@ const AddTour = () => {
                 <input
                   type="submit"
                   value="ADD TOUR"
-                  className="btn btn-primary btn-submit-login"
+                  className="btn btn-primary btn-submit-login" style={{fontSize:'15px'}}
                 />
               </div>
             </div>

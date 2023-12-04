@@ -5,7 +5,7 @@ const Profile = (props) => {
   return (
     <div className="Profile ">
       <div className="profile-image ">
-        <p>image</p>
+        <img src={props.image} alt='' />
       </div>
       <div className="profile-content">
         <h1>{props.ProfileName}</h1>
