@@ -4,7 +4,7 @@ import "../CSS/Layout.css";
 
 const Layout = () => {
   return (
-<div className="container bus-layout">
+<div className="container-fluid bus-layout">
 <ol class="d-flex">
     <li class="row row--1">
       <ol class="seats" type="A">
