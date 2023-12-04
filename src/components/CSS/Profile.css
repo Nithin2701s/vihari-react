@@ -1,0 +1,27 @@
+.Profile{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 2rem;
+
+}
+.profile-image{
+    background-color: rgb(226, 101, 101);
+    width:25%;
+    height:10rem;
+    overflow: hidden;
+}
+.profile-content{
+    background-color: white;
+    width:70%;
+
+
+}
+.profile-content h1{
+    margin-left:2rem;
+    color: #06bbcc;
+}
+.profile-content p{
+    color:black;
+    margin-left: 2rem;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../CSS/Gallery.css';
+import { Link } from 'react-router-dom';
 
 const Gallery = () => {
     const destinations = [
@@ -26,7 +27,7 @@ const Gallery = () => {
                                         <div className="filtr-item">
                                             <img src={destinations[0].image} alt={destinations[0].name} />
                                             <div className="item-title">
-                                                <a href=" ">{destinations[0].name}</a>
+                                                <Link to=" " style={{textDecoration:"none"}}>{destinations[0].name}</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -34,7 +35,7 @@ const Gallery = () => {
                                         <div className="filtr-item">
                                             <img src={destinations[1].image} alt={destinations[0].name} />
                                             <div className="item-title">
-                                                <a href=" ">{destinations[1].name}</a>
+                                                <Link to=" " style={{textDecoration:"none"}}>{destinations[1].name}</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -45,7 +46,7 @@ const Gallery = () => {
                                         <div className="filtr-item">
                                             <img src={destinations[2].image} alt={destinations[0].name} />
                                             <div className="item-title">
-                                                <a href=" ">{destinations[2].name}</a>
+                                                <Link to=" " style={{textDecoration:"none"}}>{destinations[2].name}</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -53,7 +54,7 @@ const Gallery = () => {
                                         <div className="filtr-item">
                                             <img src={destinations[3].image} alt={destinations[0].name} />
                                             <div className="item-title">
-                                                <a href=" ">{destinations[3].name}</a>
+                                                <Link to=" " style={{textDecoration:"none"}}>{destinations[3].name}</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -61,15 +62,15 @@ const Gallery = () => {
                                         <div className="filtr-item">
                                             <img src={destinations[4].image} alt={destinations[0].name} />
                                             <div className="item-title">
-                                                <a href=" ">{destinations[4].name}</a>
+                                                <Link to=" " style={{textDecoration:"none"}}>{destinations[4].name}</Link>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-8" style={{ marginLeft: '420px', marginTop: '-500px' }}>
+                                    <div className="col-md-8" style={{ marginLeft: '380px', marginTop: '-500px' }}>
                                         <div className="filtr-item">
                                             <img src={destinations[5].image} alt={destinations[0].name} />
                                             <div className="item-title">
-                                                <a href=" ">{destinations[5].name}</a>
+                                                <Link to=" " style={{textDecoration:"none"}}>{destinations[5].name}</Link>
                                             </div>
                                         </div>
                                     </div>

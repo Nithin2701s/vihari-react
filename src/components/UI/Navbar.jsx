@@ -5,17 +5,17 @@ const Navbar = () => {
    const navigate =useNavigate()
     return (
       <nav className="navbar  bg-dark navbar-dark">
-      <div className="container-fluid">
-        <Link className="navbar-brand logo" to="/"><span>V</span>ihari</Link>
+      <div className="container-fluid" style={{height:'60px'}}>
+        <Link className="navbar-brand logo" to="/"><span style={{fontSize:'25px'}}>Vihari</span></Link>
         <form className="d-flex mx-5" role="search">
-        <input name="tname" className="form-control me-2 search" type="search" placeholder="Search Tours" aria-label="Search"
+        <input name="tname" className="form-control me-2 search" style={{borderRadius:'15px',width:'200px'}}type="search" placeholder="Search Tours" aria-label="Search"
         id="header-search-bar" />
-      <button className="btn1" type="submit" style={{color: '#06bbcc',backgroundColor: 'transparent'}}>
+      <button className="btn1" type="submit" style={{color: '#06bbcc',backgroundColor: 'transparent',height:'30px',width:'80px',fontSize:'20px'}}>
         <i className="fa fa-search"></i>
       </button>
           </form>
             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-            <i className="fas fa-hamburger" style={{color: '#bbbbbb'}}></i>
+            <i className="fas fa-hamburger" style={{color: '#bbbbbb',fontSize:'20px'}}></i>
     </button>
         <div className="offcanvas offcanvas-end text-bg-dark" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div className="offcanvas-header">
@@ -23,27 +23,24 @@ const Navbar = () => {
         <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div className="offcanvas-body">
-        <ul className="navbar-nav justify-content-end  flex-grow-1 pe-3">
+        <ul className="navbar-nav justify-content-end  flex-grow-1 pe-3" style={{fontSize:'15px'}}>
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">Link</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Destination</Link>
+              <Link className="nav-link" to="/Gallery">Destination</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Tours">Tours</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Services">Services</Link>
+              <Link className="nav-link" to="/">Services</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Reviews">Review</Link>
+              <Link className="nav-link" to="/">Review</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">About</Link>
+              <Link className="nav-link" to="/About">About</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/">Contact</Link>

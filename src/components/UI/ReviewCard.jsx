@@ -1,5 +1,6 @@
 // ReviewCard.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../CSS/Reviews.css'
 const ReviewCard = ({ image, matter, name, region }) => {
   return (
@@ -17,9 +18,9 @@ const ReviewCard = ({ image, matter, name, region }) => {
               {matter}
             </p>
             <h3>
-              <a href=" " style={{ marginLeft: '5%' }}>
+              <Link to="" style={{ marginLeft: '5%',textDecoration:"none" }}>
                 {name}
-              </a>
+              </Link>
             </h3>
             <h4 style={{ marginLeft: '5%',textAlign:'revert-layer' }}>{region}</h4>
           </div>
