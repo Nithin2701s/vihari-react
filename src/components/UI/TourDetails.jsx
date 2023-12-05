@@ -30,7 +30,7 @@ const TourDetails = () => {
         <h1>Tour Place Details</h1>
       </div>
       <Link to={`/admindb/addplace/${id}`}>
-        <button className="addnew btn btn-success" type="button">
+        <button className="addnew btn btn-success" style={{ fontSize: '15px' }} type="button">
           <i className="fa fa-user-plus"></i>&nbsp; Add New Place
         </button>
       </Link>
@@ -38,21 +38,21 @@ const TourDetails = () => {
 
       {places.map((place) => (
         <div key={place.id} className="place-item-container" id={`place-item-${place.id}`}>
-        <div className="place-image-container">
-          <img
-            className="place-image"
-            src={`${place.imagePath}`}
-            alt={"Place"}
-          />
+          <div className="place-image-container">
+            <img
+              className="place-image"
+              src={`${place.imagePath}`}
+              alt={"Place"}
+            />
+          </div>
+          <div className="place-text">
+            <h2 className="place-title">{place.title}</h2>
+            <p className="place-description" name="description" style={{ fontSize: '15px' }}>
+              {place.description}
+            </p>
+          </div>
         </div>
-        <div className="place-text">
-          <h2 className="place-title">{place.title}</h2>
-          <p className="place-description" name="description">
-            {place.description}
-          </p>
-        </div>
-      </div>
-      
+
       ))}
     </>
   );

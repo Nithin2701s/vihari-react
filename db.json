@@ -14,11 +14,19 @@
   ],
   "users": [
     {
-      "firstName": "AMBULA",
-      "lastName": "SRIKAR",
+      "firstName": "Shreyan",
+      "lastName": "D",
+      "email": "shanmukhashreyan.d21@iiits.in",
+      "password": "shreyan1234",
+      "confirmPassword": "shreyan1234",
+      "id": 1
+    },
+    {
+      "firstName": "srikar",
+      "lastName": "",
       "email": "srikar.a21@iiits.in",
-      "password": "Sailu@3002",
-      "confirmPassword": "Sailu@3002",
+      "password": "srikar1234",
+      "confirmPassword": "srikar1234",
       "id": 2
     }
   ],
@@ -45,6 +53,13 @@
         }
       ],
       "id": 1
+    },
+    {
+      "tourName": "Chennai",
+      "tourPrice": "1234",
+      "imagePath": "/Bangalore.jpg",
+      "places": [],
+      "id": 2
     }
   ]
 }

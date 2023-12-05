@@ -8,7 +8,7 @@ const TourComponent = ({ image, name, price, duration, accommodation, transporta
       <div className="single-package-item">
         <img src={image} alt="package-place" />
         <div className="single-package-item-txt">
-          <h3 style={{color:'#3995a3'}}>{name} <span className="pull-right">₹{price}</span></h3>
+          <h3 style={{ color: '#3995a3' }}>{name} <span className="pull-right">₹{price}</span></h3>
           <div className="packages-para">
             <p>
               <i className="fa fa-angle-right"></i> {duration}
@@ -24,7 +24,7 @@ const TourComponent = ({ image, name, price, duration, accommodation, transporta
             </p>
           </div>
           <div className="about-btn">
-            <Link to = "" style={{textDecoration:"none"}}><button className="about-view packages-btn" >book now</button></Link>
+            <Link to="" style={{ textDecoration: "none" }}><button className="about-view packages-btn" >book now</button></Link>
           </div>
         </div>
       </div>
