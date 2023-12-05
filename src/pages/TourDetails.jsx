@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import AdminNavbar from "./AdminNavbar";
+import AdminNavbar from "../components/UI/AdminNavbar";
 import { Link, useParams } from "react-router-dom";
-import '../CSS/TourDetails.css'
-import "../CSS/AllTours.css";
+import '../components/CSS/TourDetails.css'
+import "../components/CSS/AllTours.css";
 const TourDetails = () => {
   const [places, setPlaces] = useState([]);
   const { id } = useParams();

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../CSS/AdminDasboard.css";
-import Bus1 from "../../Assets/bus1.png";
-import AdminNavbar from "./AdminNavbar";
-const AllBuses = () => {
+import "../components/CSS/AdminDasboard.css";
+import Bus1 from "../Assets/bus1.png";
+import AdminNavbar from "../components/UI/AdminNavbar";
+const AllBuses = () => {    
   const [Buses, setAllBuses] = useState([]);
 
   useEffect(() => {

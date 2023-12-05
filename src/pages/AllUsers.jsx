@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import UserAvatar from '../../Assets/User_avatar.jpg'
+import UserAvatar from '../Assets/User_avatar.jpg'
 import { Link } from 'react-router-dom';
-import AdminNavbar from "./AdminNavbar";
+import AdminNavbar from "../components/UI/AdminNavbar";
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
 

@@ -1,33 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import AdminNavbar from "./AdminNavbar";
-const AddPlace = () => {
-  const [tour, setTour] = useState([]);
+import React, { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom';
+import AdminNavbar from "../components/UI/AdminNavbar";
+const EditTour = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
 
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    title: "",
-    description: "",
+    tourName: "",
+    tourPrice: 0,
     imagePath: "/Bangalore.jpg",
-
   });
 
   useEffect(() => {
-    const getTour = () => {
-      fetch('http://localhost:8000/tours/' + id).then((res) => {
-        return res.json();
-      })
-        .then((tourData) => {
-          setTour(tourData);
-        })
-        .catch((err) => {
-          console.error(err);
-        })
-    };
-    getTour();
-  }, [id]);
 
+    fetch(`http://localhost:8000/tours/${id}`)
+      .then((res) => res.json())
+      .then((tour) => {
+
+        setFormData({
+          tourName: tour.tourName,
+          tourPrice: tour.tourPrice,
+          imagePath: tour.imagePath,
+        });
+      })
+      .catch((err) => {
+        console.error(err.message);
+      });
+  }, [id]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -39,27 +38,24 @@ const AddPlace = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const updatedTour = {
-      ...tour,
-      places: [...tour.places, formData],
-    };
-    fetch("http://localhost:8000/tours/" + id, {
+
+    fetch(`http://localhost:8000/tours/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updatedTour),
+      body: JSON.stringify(formData),
     })
       .then((res) => {
-        alert("Place added successfully");
-        navigate('/admindb/opentour/' + id);
+        alert("Tour updated successfully");
+        navigate('/admindb/alltours');
       })
       .catch((err) => {
         console.error(err.message);
       });
-    console.log("Form data submitted:", formData);
-
   };
+
+
 
   return (
     <div><AdminNavbar />
@@ -69,9 +65,8 @@ const AddPlace = () => {
             <form onSubmit={handleSubmit}>
               <div className="row ">
                 <div className="">
-                  <h1 style={{ color: 'white', marginTop: '50px', fontSize: '30px' }}>Add Place</h1>
+                  <h1 style={{ color: 'white', marginTop: '50px', fontSize: '30px' }}>Edit Tour</h1>
                   <div className="row login-row" style={{ marginTop: '170px', display: 'flex', flexDirection: 'column', marginLeft: '100px', width: '450px' }}>
-
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
                         <span className="input-group-text span">
@@ -82,11 +77,11 @@ const AddPlace = () => {
                             type="text"
                             className="form-control inputs"
                             id="f-name"
-                            name="title"
-                            placeholder="Place Name"
+                            name="tourName"
+                            placeholder="Tour Name"
                             fdprocessedid="2myzgp"
                             onChange={handleInputChange}
-                            value={formData.title}
+                            value={formData.tourName}
                           />
                           <span
                             className="invalid-form"
@@ -101,18 +96,18 @@ const AddPlace = () => {
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
                         <span className="input-group-text span">
-                          <i className="fa fa-map-marker" aria-hidden="true"></i>
+                          <i class="fa fa-inr" aria-hidden="true"></i>
                         </span>
                         <div className="form-floating">
                           <input
-                            type="text"
+                            type="number"
                             className="form-control inputs"
                             id="lname"
-                            name="description"
-                            placeholder="Description"
+                            name="tourPrice"
+                            placeholder="Tour Price"
                             fdprocessedid="2myzgp"
                             onChange={handleInputChange}
-                            value={formData.description}
+                            value={formData.tourPrice}
                           />
                           <span
                             className="invalid-form"
@@ -126,7 +121,7 @@ const AddPlace = () => {
 
                   <input
                     type="submit"
-                    value="ADD PLACE"
+                    value="EDIT TOUR"
                     className="btn btn-primary btn-submit-login" style={{ fontSize: '15px' }}
                   />
                 </div>
@@ -137,6 +132,6 @@ const AddPlace = () => {
       </div>
     </div>
   );
-};
+}
 
-export default AddPlace;
+export default EditTour

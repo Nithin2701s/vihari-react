@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AdminNavbar from "./AdminNavbar";
+import AdminNavbar from "../components/UI/AdminNavbar";
 const AddUser = () => {
   const navigate = useNavigate();
 

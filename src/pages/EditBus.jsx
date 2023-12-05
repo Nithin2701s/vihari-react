@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import AdminNavbar from "./AdminNavbar";
-
-const AddBus = () => {
+import React, { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import AdminNavbar from "../components/UI/AdminNavbar";
+const EditBus = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+
   const [formData, setFormData] = useState({
     srcname: "",
     destname: "",
@@ -15,6 +16,27 @@ const AddBus = () => {
     btype: "",
   });
 
+  useEffect(() => {
+
+    fetch(`http://localhost:8000/buses/${id}`)
+      .then((res) => res.json())
+      .then((bus) => {
+
+        setFormData({
+          srcname: bus.srcname,
+          destname: bus.destname,
+          bname: bus.bname,
+          deptime: bus.deptime,
+          arrtime: bus.arrtime,
+          durtime: bus.durtime,
+          tktprice: bus.tktprice,
+          btype: bus.btype,
+        });
+      })
+      .catch((err) => {
+        console.error(err.message);
+      });
+  }, [id]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -26,23 +48,24 @@ const AddBus = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:8000/buses", {
-      method: "POST",
+
+    fetch(`http://localhost:8000/buses/${id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
       .then((res) => {
-        alert("Bus added successfully");
+        alert("Bus updated successfully");
         navigate('/admindb/allbuses');
       })
       .catch((err) => {
         console.error(err.message);
       });
-    console.log("Form data submitted:", formData);
-
   };
+
+
 
   return (
     <div><AdminNavbar />
@@ -52,7 +75,7 @@ const AddBus = () => {
             <form onSubmit={handleSubmit}>
               <div className="row ">
                 <div className="">
-                  <h1 style={{ color: 'white', marginTop: '50px', fontSize: '30px' }}>Add Bus</h1>
+                  <h1 style={{ color: 'white', marginTop: '50px', fontSize: '30px' }}>Edit Bus</h1>
                   <div className="row login-row" style={{ marginTop: '50px', display: 'flex', flexDirection: 'column', marginLeft: '100px', width: '450px' }}>
 
                     {/* Source Name */}
@@ -107,6 +130,7 @@ const AddBus = () => {
                       </div>
                     </div>
 
+
                     {/* Travels Name */}
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
@@ -124,10 +148,10 @@ const AddBus = () => {
                             value={formData.bname}
                           />
                           <span className="invalid-form" id="invalid-email"></span>
-
                         </div>
                       </div>
                     </div>
+
                     {/* Departure Time */}
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
@@ -145,10 +169,10 @@ const AddBus = () => {
                             value={formData.deptime}
                           />
                           <span className="invalid-form" id="invalid-email"></span>
-
                         </div>
                       </div>
                     </div>
+
                     {/* Arrival Time */}
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
@@ -166,10 +190,10 @@ const AddBus = () => {
                             value={formData.arrtime}
                           />
                           <span className="invalid-form" id="invalid-email"></span>
-
                         </div>
                       </div>
                     </div>
+
                     {/* Duration Time */}
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
@@ -187,10 +211,10 @@ const AddBus = () => {
                             value={formData.durtime}
                           />
                           <span className="invalid-form" id="invalid-email"></span>
-
                         </div>
                       </div>
                     </div>
+
                     {/* Ticket Price */}
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
@@ -208,10 +232,10 @@ const AddBus = () => {
                             value={formData.tktprice}
                           />
                           <span className="invalid-form" id="invalid-email"></span>
-
                         </div>
                       </div>
                     </div>
+
                     {/* Bus Type */}
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
@@ -229,14 +253,13 @@ const AddBus = () => {
                             value={formData.btype}
                           />
                           <span className="invalid-form" id="invalid-email"></span>
-
                         </div>
                       </div>
                     </div>
                   </div>
                   <input
                     type="submit"
-                    value="ADD BUS"
+                    value="Edit BUS"
                     className="btn btn-primary btn-submit-login" style={{ fontSize: '15px' }}
                   />
                 </div>
@@ -247,6 +270,6 @@ const AddBus = () => {
       </div>
     </div>
   );
-};
+}
 
-export default AddBus;
+export default EditBus

@@ -1,32 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom';
-import AdminNavbar from './AdminNavbar';
-const EditTour = () => {
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import AdminNavbar from "../components/UI/AdminNavbar";
+const AddTour = () => {
   const navigate = useNavigate();
-  const { id } = useParams();
-
   const [formData, setFormData] = useState({
     tourName: "",
-    tourPrice: 0,
+    tourPrice: '',
     imagePath: "/Bangalore.jpg",
+    places: []
+
   });
 
-  useEffect(() => {
-
-    fetch(`http://localhost:8000/tours/${id}`)
-      .then((res) => res.json())
-      .then((tour) => {
-
-        setFormData({
-          tourName: tour.tourName,
-          tourPrice: tour.tourPrice,
-          imagePath: tour.imagePath,
-        });
-      })
-      .catch((err) => {
-        console.error(err.message);
-      });
-  }, [id]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -39,33 +23,33 @@ const EditTour = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:8000/tours/${id}`, {
-      method: "PUT",
+    fetch("http://localhost:8000/tours", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
       .then((res) => {
-        alert("Tour updated successfully");
+        alert("Tour added successfully");
         navigate('/admindb/alltours');
       })
       .catch((err) => {
         console.error(err.message);
       });
+    console.log("Form data submitted:", formData);
+
   };
-
-
 
   return (
     <div><AdminNavbar />
       <div className="add-tour" style={{ backgroundColor: 'white' }}>
-        <div className="main">
+        <div className="main ">
           <div className="container addtour" style={{ fontSize: '15px', color: 'black', backgroundColor: 'blue' }}>
             <form onSubmit={handleSubmit}>
               <div className="row ">
                 <div className="">
-                  <h1 style={{ color: 'white', marginTop: '50px', fontSize: '30px' }}>Edit Tour</h1>
+                  <h1 style={{ color: 'white', marginTop: '50px', fontSize: '30px' }}>Add Tour</h1>
                   <div className="row login-row" style={{ marginTop: '170px', display: 'flex', flexDirection: 'column', marginLeft: '100px', width: '450px' }}>
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
@@ -121,7 +105,7 @@ const EditTour = () => {
 
                   <input
                     type="submit"
-                    value="EDIT TOUR"
+                    value="ADD TOUR"
                     className="btn btn-primary btn-submit-login" style={{ fontSize: '15px' }}
                   />
                 </div>
@@ -132,6 +116,6 @@ const EditTour = () => {
       </div>
     </div>
   );
-}
+};
 
-export default EditTour
+export default AddTour;

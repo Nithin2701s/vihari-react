@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import AdminNavbar from "./AdminNavbar";
+import AdminNavbar from "../components/UI/AdminNavbar";
 import { Link } from "react-router-dom";
 
-import "../CSS/AllTours.css";
+import "../components/CSS/AllTours.css";
 const AllTours = () => {
   const [tours, setTours] = useState([]);
 

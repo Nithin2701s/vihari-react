@@ -1,15 +1,32 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import AdminNavbar from "./AdminNavbar";
-const AddTour = () => {
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import AdminNavbar from "../components/UI/AdminNavbar";
+const AddPlace = () => {
+  const [tour, setTour] = useState([]);
+  const { id } = useParams();
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    tourName: "",
-    tourPrice: '',
+    title: "",
+    description: "",
     imagePath: "/Bangalore.jpg",
-    places: []
 
   });
+
+  useEffect(() => {
+    const getTour = () => {
+      fetch('http://localhost:8000/tours/' + id).then((res) => {
+        return res.json();
+      })
+        .then((tourData) => {
+          setTour(tourData);
+        })
+        .catch((err) => {
+          console.error(err);
+        })
+    };
+    getTour();
+  }, [id]);
 
 
   const handleInputChange = (e) => {
@@ -22,17 +39,20 @@ const AddTour = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    fetch("http://localhost:8000/tours", {
-      method: "POST",
+    const updatedTour = {
+      ...tour,
+      places: [...tour.places, formData],
+    };
+    fetch("http://localhost:8000/tours/" + id, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(updatedTour),
     })
       .then((res) => {
-        alert("Tour added successfully");
-        navigate('/admindb/alltours');
+        alert("Place added successfully");
+        navigate('/admindb/opentour/' + id);
       })
       .catch((err) => {
         console.error(err.message);
@@ -44,13 +64,14 @@ const AddTour = () => {
   return (
     <div><AdminNavbar />
       <div className="add-tour" style={{ backgroundColor: 'white' }}>
-        <div className="main ">
+        <div className="main">
           <div className="container addtour" style={{ fontSize: '15px', color: 'black', backgroundColor: 'blue' }}>
             <form onSubmit={handleSubmit}>
               <div className="row ">
                 <div className="">
-                  <h1 style={{ color: 'white', marginTop: '50px', fontSize: '30px' }}>Add Tour</h1>
+                  <h1 style={{ color: 'white', marginTop: '50px', fontSize: '30px' }}>Add Place</h1>
                   <div className="row login-row" style={{ marginTop: '170px', display: 'flex', flexDirection: 'column', marginLeft: '100px', width: '450px' }}>
+
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
                         <span className="input-group-text span">
@@ -61,11 +82,11 @@ const AddTour = () => {
                             type="text"
                             className="form-control inputs"
                             id="f-name"
-                            name="tourName"
-                            placeholder="Tour Name"
+                            name="title"
+                            placeholder="Place Name"
                             fdprocessedid="2myzgp"
                             onChange={handleInputChange}
-                            value={formData.tourName}
+                            value={formData.title}
                           />
                           <span
                             className="invalid-form"
@@ -80,18 +101,18 @@ const AddTour = () => {
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
                         <span className="input-group-text span">
-                          <i class="fa fa-inr" aria-hidden="true"></i>
+                          <i className="fa fa-map-marker" aria-hidden="true"></i>
                         </span>
                         <div className="form-floating">
                           <input
-                            type="number"
+                            type="text"
                             className="form-control inputs"
                             id="lname"
-                            name="tourPrice"
-                            placeholder="Tour Price"
+                            name="description"
+                            placeholder="Description"
                             fdprocessedid="2myzgp"
                             onChange={handleInputChange}
-                            value={formData.tourPrice}
+                            value={formData.description}
                           />
                           <span
                             className="invalid-form"
@@ -105,7 +126,7 @@ const AddTour = () => {
 
                   <input
                     type="submit"
-                    value="ADD TOUR"
+                    value="ADD PLACE"
                     className="btn btn-primary btn-submit-login" style={{ fontSize: '15px' }}
                   />
                 </div>
@@ -118,4 +139,4 @@ const AddTour = () => {
   );
 };
 
-export default AddTour;
+export default AddPlace;

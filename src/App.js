@@ -12,21 +12,21 @@ import Layout from './components/UI/Layout';
 
 import Tours from './pages/Tours';
 
-import AddBus from './components/UI/AddBus';
-import AllBuses from './components/UI/AllBuses';
-import EditBus from './components/UI/EditBus';
-import AllUsers from './components/UI/AllUsers';
-import AddUser from './components/UI/AddUser';
+import AddBus from './pages/AddBus';
+import AllBuses from './pages/AllBuses';
+import EditBus from './pages/EditBus';
+import AllUsers from './pages/AllUsers';
+import AddUser from './pages/AddUser';
 import About from './pages/About';
 import Gallery from './components/UI/Gallery';
 
 import BusList from './components/UI/BusList';
-import AddTour from './components/UI/AddTour';
-import AllTours from './components/UI/AllTours';
-import EditTour from './components/UI/EditTour';
-import TourDetails from './components/UI/TourDetails';
-import AddPlace from './components/UI/AddPlace';
-import BookTour from './components/UI/BookTour';
+import AddTour from './pages/AddTour';
+import AllTours from './pages/AllTours';
+import EditTour from './pages/EditTour';
+import TourDetails from './pages/TourDetails';
+import AddPlace from './pages/AddPlace';
+import BookTour from './pages/BookTour';
 import Contact from './pages/Contact';
 
 function App() {

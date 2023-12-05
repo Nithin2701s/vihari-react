@@ -69,7 +69,7 @@ const TravelPage = () => {
                         <input name="date" type="date" value={searchDetails.date} onChange={(e)=>{onchange(e)}} placeholder="Departure" required style={{ backgroundColor: 'aliceblue', width: '150px' }} />
                       </div>
                       <Link to="">
-                        <button className="btn btn-travel" type="submit">
+                        <button className="btn btn-travel" type="submit" style={{background: '#29d9d5',color: 'white'}}>
                           Search
                         </button>
                       </Link>

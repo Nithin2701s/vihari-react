@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../UI/Navbar";
+import Navbar from "../components/UI/Navbar";
 import { Link, useParams } from "react-router-dom";
-import '../CSS/TourDetails.css'
-import "../CSS/AllTours.css";
+import '../components/CSS/TourDetails.css'
+import "../components/CSS/AllTours.css";
 const BookTour = () => {
   const [places, setPlaces] = useState([]);
   const { id } = useParams();
