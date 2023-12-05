@@ -26,6 +26,8 @@ import AllTours from './components/UI/AllTours';
 import EditTour from './components/UI/EditTour';
 import TourDetails from './components/UI/TourDetails';
 import AddPlace from './components/UI/AddPlace';
+import BookTour from './components/UI/BookTour';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -50,6 +52,8 @@ function App() {
           <Route exact path='/about' element={<About/>}/>
           <Route exact path="/admindb/edittour/:id" element={ <EditTour/>}/>
           <Route exact path="/admindb/opentour/:id" element={ <TourDetails/>}/>
+          <Route exact path='/admindb/booktour/:id' element={ <BookTour/>}/>
+          <Route exact path='/contact' element={ <Contact/>}/>
         </Routes>
     </Router>
     </UserState>

@@ -58,3 +58,10 @@ a.nav-link.active:hover {
 .logo{
   margin-left: 40px;
 }
+.links{
+  display: flex;
+  font-size: 20px;
+}
+.links :link{
+  padding-right: 40px;
+}
