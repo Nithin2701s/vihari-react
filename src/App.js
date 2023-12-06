@@ -21,23 +21,16 @@ import About from './pages/About';
 import Gallery from './components/UI/Gallery';
 
 import BusList from './components/UI/BusList';
-<<<<<<< HEAD
-import AddTour from './components/UI/AddTour';
-import AllTours from './components/UI/AllTours';
-import EditTour from './components/UI/EditTour';
-import TourDetails from './components/UI/TourDetails';
-import AddPlace from './components/UI/AddPlace';
-import BusState from './context/bus/BusState';
-import PassengerDetails from './components/UI/PassengerDetails';
-=======
+
 import AddTour from './pages/AddTour';
 import AllTours from './pages/AllTours';
 import EditTour from './pages/EditTour';
 import TourDetails from './pages/TourDetails';
 import AddPlace from './pages/AddPlace';
+import BusState from './context/bus/BusState';
+import PassengerDetails from './components/UI/PassengerDetails';
 import BookTour from './pages/BookTour';
 import Contact from './pages/Contact';
->>>>>>> 4f429ddb7ac7fa1c545c1e70c4ce366f39c04a45
 
 function App() {
   return (
@@ -52,11 +45,10 @@ function App() {
           <Route exact path='/tours' element={<Tours/>}/>
           <Route exact path='/Gallery' element={<Gallery/>}/>
           <Route exact  path='/buses' element={<BusList/>}/>
-<<<<<<< HEAD
+
           <Route exact  path='/passengers' element={<PassengerDetails/>}/>
 
-=======
->>>>>>> 4f429ddb7ac7fa1c545c1e70c4ce366f39c04a45
+
           <Route exact path='/admindb/allbuses' element={<AllBuses/>} />
           <Route exact path='/admindb/allusers' element={<AllUsers/>} />
           <Route exact path='/admindb/alltours' element={<AllTours/>}/>

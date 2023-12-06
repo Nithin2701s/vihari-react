@@ -2,6 +2,10 @@ import React, { useContext, useState} from 'react';
 import busContext from '../../context/bus/busContext';
 import '../CSS/PassengerDetails.css'
 import Footer from './Footer';
+import BusNav from './BusNav';
+// import Razorpay from 'razorpay';
+
+
 const PassengerDetails = () => {
   const { selectedSeats } = useContext(busContext);
 
@@ -42,15 +46,17 @@ const PassengerDetails = () => {
 
   return (
     <>
+    <BusNav/>
     <div className="container custom-container">
       <div className="row justify-content-center">
         <div className="col-md-8" style={{fontSize:'50px'}}>
-          <form>
-            <div className="form-group">
+          <h1>Passenger Details</h1>
+          <form style={{boxShadow:'2px 1px 4px grey',padding:'1%'}}>
+            <div className="form-group passenger-details my-3">
               <label htmlFor="email">Email</label>
               <input
                 type="email"
-                className="form-control"
+                className="form-control passenger-input"
                 id="email"
                 placeholder="Enter your email"
                 name="email"
@@ -58,11 +64,11 @@ const PassengerDetails = () => {
                 onChange={handleCommonInputChange} style={{fontSIze:'15px'}}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group passenger-details my-3">
               <label htmlFor="phoneNumber">Phone Number</label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control passenger-input"
                 id="phoneNumber"
                 placeholder="Enter your phone number"
                 name="phoneNumber"
@@ -72,13 +78,13 @@ const PassengerDetails = () => {
             </div>
           </form>
           {selectedSeats.seats.map((seat) => (
-            <form key={seat}>
+            <form key={seat} className='my-5' style={{boxShadow:'2px 1px 4px grey',padding:'1%'}}>
               <h4>Seat {seat}</h4>
-              <div className="form-group">
+              <div className="form-group passenger-details my-3">
                 <label htmlFor={`name-${seat}`}>Name</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control passenger-input"
                   id={`name-${seat}`}
                   placeholder="Enter passenger name"
                   name="name"
@@ -86,23 +92,24 @@ const PassengerDetails = () => {
                   onChange={(e) => handlePassengerInputChange(seat, e)}
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group passenger-details my-3">
                 <label htmlFor={`age-${seat}`}>Age</label>
                 <input
-                  type="text"
-                  className="form-control"
+                  type="number"
+                  className="form-control passenger-input"
                   id={`age-${seat}`}
                   placeholder="Enter passenger age"
                   name="age"
                   value={formsData[seat].age}
                   onChange={(e) => handlePassengerInputChange(seat, e)}
+                  min={7}
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group passenger-details my-3">
                 <label htmlFor={`gender-${seat}`}>Gender</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control passenger-input"
                   id={`gender-${seat}`}
                   placeholder="Enter passenger gender"
                   name="gender"
@@ -112,7 +119,7 @@ const PassengerDetails = () => {
               </div>
             </form>
           ))}
-          <button className="btn btn-primary" onClick={handlePayNow}>
+          <button className="btn btn-primary pay-now" onClick={handlePayNow}>
             Pay Now
           </button>
         </div>

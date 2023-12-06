@@ -88,14 +88,11 @@ const handleOnClick=(e)=>{
                         <input name="date" type="date" value={localsearchDetails.date} onChange={(e)=>{onchange(e)}} placeholder="Departure" required style={{ backgroundColor: 'aliceblue', width: '150px' }} />
                       </div>
                       <Link to="">
-<<<<<<< HEAD
-                        <button className="btn btn-travel" type="submit" onClick={(e)=>{handleOnClick(e)}}>
-=======
-                        <button className="btn btn-travel" type="submit" style={{background: '#29d9d5',color: 'white'}}>
->>>>>>> 4f429ddb7ac7fa1c545c1e70c4ce366f39c04a45
+
+                        <button className="btn btn-travel" type="submit" onClick={(e)=>{handleOnClick(e)}}style={{background: '#29d9d5',color: 'white'}}>
+
                           Search
-                        </button>
-                      </Link>
+                        </button></Link>
                     </form>
                   </div>
                 </div>

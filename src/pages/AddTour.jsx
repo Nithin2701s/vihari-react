@@ -80,7 +80,7 @@ const AddTour = () => {
                     <div className="col-md-6">
                       <div className="input-group mb-3 user">
                         <span className="input-group-text span">
-                          <i class="fa fa-inr" aria-hidden="true"></i>
+                          <i className="fa fa-inr" aria-hidden="true"></i>
                         </span>
                         <div className="form-floating">
                           <input
