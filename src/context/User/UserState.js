@@ -1,10 +1,11 @@
+import { useState } from "react";
 import userContext from "./userContext";
 
 const host='http://localhost:4000'
 
 
 const UserState = (props) => {
-
+    
   // Vrifying user with the inputs
     const verifyUser= async(email,password)=>{
 
@@ -42,8 +43,14 @@ const UserState = (props) => {
 
   }
 
+// search Details
+const [searchDetails, setsearchDetails] = useState({srcname:'',destname:'',date:''})
+
+const updateSearch=(srcname,destname,date)=>{
+setsearchDetails({srcname,destname,date})
+}
   return (
-    <userContext.Provider value={{verifyUser,createUser}}>
+    <userContext.Provider value={{verifyUser,createUser,searchDetails,updateSearch}}>
         {props.children}
     </userContext.Provider>
   )

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import bus1 from '../../Assets/bus1.png';
 import bus3 from '../../Assets/bus3.jpg';
-import bus5 from '../../Assets/bus5.jpg';
+// import bus5 from '../../Assets/bus5.jpg';
 import Layout from './Layout'
 import Footer from './Footer';
+import BusNav from './BusNav';
 const BusList = () => {
   const [selectedBusName, setSelectedBusName] = useState();
   const [showSeats, setShowSeats] = useState(false);
@@ -12,11 +13,6 @@ const BusList = () => {
     { id: 1, name: 'APSRTC', route: 'Route 1', departure: '10:00 AM', arrival: '2:00 PM', duration: '4 hours', type: 'Express', fare: '320', image: bus1 },
     { id: 2, name: 'PSR travels', route: 'Route 2', departure: '12:00 PM', arrival: '4:00 PM', duration: '4 hours', type: 'Standard', fare: '230', image: bus3 },
     // Add more buses as needed
-  ];
-  const seatRows = [
-    { row: 'A', seats: ['A1', 'A2', 'A3', 'A4', 'A5'] },
-    { row: 'B', seats: ['B1', 'B2', 'B3', 'B4', 'B5'] },
-    { row: 'C', seats: ['C1', 'C2', 'C3', 'C4', 'C5'] },
   ];
   const toggleSeats = (bus) => {
     if(showSeats && selectedBusName === bus.name){
@@ -28,9 +24,10 @@ const BusList = () => {
 
   return (
     <> 
+    <BusNav/>
    <div className="container-fluid mt-5">
       <h2 className="text-center mb-4">Bus List</h2>
-      <table className="table" style={{ padding: '5px' }}>
+      <table className="table" style={{fontSize:'60px',padding: '5px' }}>
         <thead>
          <tr>
             <th scope="col">Bus Image</th>
@@ -66,11 +63,10 @@ const BusList = () => {
                 </button>
               </td>
             </tr>
-            <tr>
+            <tr className='my-5'>
               <td colSpan='7' className='text-center' >
             {showSeats && selectedBusName === bus.name && (
                     <div>
-                      <h5 className="text-center mb-3">Seat Layout for {selectedBusName}</h5>
                       <Layout bus={bus}/>
                     </div>
                   )}

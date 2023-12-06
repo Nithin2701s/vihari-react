@@ -8,9 +8,11 @@
   border: none;
   text-decoration: none;
   transition: all 0.2s linear;
-  /* font-size:62.5%; */
+  font-size:62.5%;
 }
-
+input.bus-nav-input{
+font-size: 15px;
+}
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -18,6 +20,66 @@ html {
   scroll-behavior: smooth;
 }
 
+<<<<<<< HEAD
+section {
+  padding: 2rem 9%;
+}
+/* .navbar-brand{
+  font-size:30px;
+}
+ul.navbar-nav{
+  font-size: 30px;
+}
+button.btn-close{
+  font-size: 15px;
+}
+i.fa-hamburger{
+  font-size:30px;
+}
+i.fa-search,input.search{
+  font-size: 20px;
+} */
+.navbar-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #343a40;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  cursor: pointer;
+  font-size: 2rem;
+  height: 80px;
+}
+
+.navbar-header .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: white;
+  text-transform: uppercase;
+}
+
+.navbar-header .logo span {
+  color: #06bbcc;
+}
+
+.navbar-header .search{
+  border-radius: 2rem;
+  border: 0.2rem solid #29d9d5;
+  background: none;
+  width: 200px;
+  color: white;
+}
+
+.navbar-header .searchtext ::placeholder{
+  color: #aea5a5;
+}
+
+=======
+>>>>>>> 4f429ddb7ac7fa1c545c1e70c4ce366f39c04a45
 .btn1{
   display: flex;
   margin-right: 2rem;

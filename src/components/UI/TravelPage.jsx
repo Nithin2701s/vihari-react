@@ -1,8 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import '../CSS/TravelPage.css';
+import userContext from "../../context/User/userContext";
 
 const TravelPage = () => {
+
+// Navigation call
+const navigate =useNavigate()
+
+//  Context API call
+const {updateSearch} = useContext(userContext)
+
   const [query, setQuery] = useState('');
   const [cities, setCities] = useState([
     'Mumbai',
@@ -12,9 +20,9 @@ const TravelPage = () => {
     'Chennai'
   ]);
   const onchange = (e)=>{
-    setSearchDetails({...searchDetails,[e.target.name]:e.target.value.split(',')[0]})
+    setlocalsearchDetails({...localsearchDetails,[e.target.name]:e.target.value.split(',')[0]})
   }
-  const [searchDetails, setSearchDetails] = useState({srcname:'',destname:'',date:''})
+  const [localsearchDetails, setlocalsearchDetails] = useState({srcname:'',destname:'',date:''})
   useEffect(() => {
     const fetchCities = async () => {
       try {
@@ -39,8 +47,19 @@ const TravelPage = () => {
     }
   }, [query]);
 
-  // Predefined options for input field
-
+  // onclick handle function
+const handleOnClick=(e)=>{
+   e.preventDefault()
+   const {srcname,destname,date} = localsearchDetails
+   if(srcname!=='' && destname!=='' && date !==''){
+   updateSearch(srcname,destname,date)
+  setlocalsearchDetails({srcname:'',destname:'',date:''})
+   navigate('/buses')
+   }
+   else {
+    alert('Fill the inputs')
+   }
+  }
 
   return (
     <div className="container-fluid travel-page">
@@ -54,22 +73,26 @@ const TravelPage = () => {
                   <div className="search-form-container">
                     <form action="/searchbuses" className="form search-form" method="post">
                       <div className="search-form__elements">
-                        <input type="text" id='srcname' value={searchDetails.srcname} name="srcname" placeholder="Source" style={{ backgroundColor: 'aliceblue' }} onChange={(e) => {setQuery(e.target.value); onchange(e)}} list="srcOptions" />
+                        <input type="text" id='srcname' value={localsearchDetails.srcname} name="srcname" placeholder="Source" style={{ backgroundColor: 'aliceblue' }} onChange={(e) => {setQuery(e.target.value); onchange(e)}} list="srcOptions" />
                         <datalist id="srcOptions">
                           {cities.map((option, index) => (
-                            <option key={index} value={option}  onClick={()=>{setSearchDetails({...searchDetails,srcname:option.split(',')[0]})}}/>
+                            <option key={index} value={option}  onClick={()=>{setlocalsearchDetails({...localsearchDetails,srcname:option.split(',')[0]})}}/>
                           ))}
                         </datalist>
-                        <input type="text" name="destname" value={searchDetails.destname} onChange={(e)=>{setQuery(e.target.value); onchange(e)}} placeholder="Destination" style={{ backgroundColor: 'aliceblue' }} list="destOptions" />
+                        <input type="text" name="destname" value={localsearchDetails.destname} onChange={(e)=>{setQuery(e.target.value); onchange(e)}} placeholder="Destination" style={{ backgroundColor: 'aliceblue' }} list="destOptions" />
                         <datalist id="destOptions">
                           {cities.map((option, index) => (
-                            <option key={index} value={option} onClick={()=>{setSearchDetails({...searchDetails,destname:option.split(',')[0]})}} />
+                            <option key={index} value={option} onClick={()=>{setlocalsearchDetails({...localsearchDetails,destname:option.split(',')[0]})}} />
                           ))}
                         </datalist>
-                        <input name="date" type="date" value={searchDetails.date} onChange={(e)=>{onchange(e)}} placeholder="Departure" required style={{ backgroundColor: 'aliceblue', width: '150px' }} />
+                        <input name="date" type="date" value={localsearchDetails.date} onChange={(e)=>{onchange(e)}} placeholder="Departure" required style={{ backgroundColor: 'aliceblue', width: '150px' }} />
                       </div>
                       <Link to="">
+<<<<<<< HEAD
+                        <button className="btn btn-travel" type="submit" onClick={(e)=>{handleOnClick(e)}}>
+=======
                         <button className="btn btn-travel" type="submit" style={{background: '#29d9d5',color: 'white'}}>
+>>>>>>> 4f429ddb7ac7fa1c545c1e70c4ce366f39c04a45
                           Search
                         </button>
                       </Link>
