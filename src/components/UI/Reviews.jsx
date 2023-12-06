@@ -44,33 +44,33 @@ const ReviewsSection = () => {
   const reviewsData = [
     {
       image: '../User_avatar.jpg',
-      matter: 'Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+      matter: 'User-friendly platform, vast network, and great discounts. Real-time tracking adds convenience.',
       name: 'Ramesh',
       region: 'India',
     },
     {
         image: '../User_avatar.jpg',
-        matter: 'Another review text goes here. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        name: 'Ramesh',
-        region: 'United States',
+        matter: 'Effortless bookings, diverse options, and top-notch customer service. Vihari is my travel companion!',
+        name: 'Suresh',
+        region: 'India',
       },
       {
         image: '../User_avatar.jpg',
-        matter: 'A third review with some meaningful content. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        name: 'John',
-        region: 'Canada',
+        matter: 'Reliable and secure payments. Real-time tracking is a game-changer. Highly recommended for stress-free journeys.',
+        name: 'Ravi',
+        region: 'India',
       },
       {
         image: '../User_avatar.jpg',
-        matter: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc facilisis tristique sem, sit amet malesuada augue vestibulum vitae.',
-        name: 'Ramesh',
-        region: 'Spain',
+        matter: 'Simple interface, diverse routes, and prompt customer support. Solid choice for tours',
+        name: 'Surya',
+        region: 'India',
       },
       {
         image: '../User_avatar.jpg',
-        matter: 'Fifth review content. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        name: 'Ahmed',
-        region: 'Egypt',
+        matter: 'Vihari never disappoints. Secure payments, wide range of operators, and cool discounts. A must for bus bookings!',
+        name: 'Raju',
+        region: 'India',
       },
     // Add more review data as needed
   ];
@@ -80,8 +80,8 @@ const ReviewsSection = () => {
       <div className="mb-7 text-center">
         <h2 className="services-header">Reviews</h2>
       </div>
-      <div className="slide-container swiper">
-        <div className="slide-content">
+      <div className="slide-container swiper" >
+        <div className="slide-content" >
           <div className="swiper-wrapper">
             {reviewsData.map((review, index) => (
               <ReviewCard
@@ -93,8 +93,6 @@ const ReviewsSection = () => {
               />
             ))}
           </div>
-          <div className="swiper-button-next"></div>
-          <div className="swiper-button-prev"></div>
         </div>
       </div>
     </section>

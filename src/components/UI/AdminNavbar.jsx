@@ -7,7 +7,7 @@ const AdminNavbar = () => {
       <Link className="navbar-brand" to="/">
         <i className="fa fa-bus" aria-hidden="true"></i>
       </Link>
-      <Link className="navbar-brand" to="/admindb">
+      <Link className="navbar-brand" to="/admindb/alltours">
         Vihari
       </Link>
       <button
