@@ -12,7 +12,7 @@
     padding-bottom: 14px;
 }
 div.services-cards{
-   font-size: 50px; 
+   font-size: 14px; 
 }
 .card.service-card:before {
     content: '';
@@ -38,5 +38,4 @@ div.services-cards{
     display: flex;
     flex-direction: row;
     margin-top: 20px;
-    font-size: 14px;
 }

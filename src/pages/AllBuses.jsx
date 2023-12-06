@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../CSS/AdminDasboard.css";
-import Bus1 from "../../Assets/bus1.png";
-import AdminNavbar from "./AdminNavbar";
-const AllBuses = () => {
+import "../components/CSS/AdminDasboard.css";
+import Bus1 from "../Assets/bus1.png";
+import AdminNavbar from "../components/UI/AdminNavbar";
+const AllBuses = () => {    
   const [Buses, setAllBuses] = useState([]);
 
   useEffect(() => {
@@ -25,26 +25,26 @@ const AllBuses = () => {
   const handleDeleteBus = (busId) => {
     const confirmDelete = window.confirm('Are you sure you want to delete this bus?');
     if (confirmDelete) {
-    fetch(`http://localhost:8000/buses/${busId}`, {
-      method: "DELETE",
-    })
-      .then((res) => {
-        alert("Bus deleted successfully");
-        window.location.reload();
+      fetch(`http://localhost:8000/buses/${busId}`, {
+        method: "DELETE",
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
+        .then((res) => {
+          alert("Bus deleted successfully");
+          window.location.reload();
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
     }
   };
   return (
     <div>
-        <AdminNavbar/>
+      <AdminNavbar />
       <div>
         <h1>Buses Details</h1>
       </div>
       <Link to="/admindb/addbus">
-        <button className="addnew btn btn-success" type="button">
+        <button className="addnew btn btn-success" type="button" style={{ fontSize: '15px' }}>
           <i className="fa fa-user-plus"></i>&nbsp; Add New Bus
         </button>
       </Link>

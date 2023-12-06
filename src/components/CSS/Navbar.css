@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  text-transform: capitalize;
   outline: none;
   border: none;
   text-decoration: none;
@@ -13,12 +14,13 @@ input.bus-nav-input{
 font-size: 15px;
 }
 html {
- 
+  font-size: 62.5%;
   overflow-x: hidden;
   scroll-padding-top: 6rem;
   scroll-behavior: smooth;
 }
 
+<<<<<<< HEAD
 section {
   padding: 2rem 9%;
 }
@@ -76,9 +78,22 @@ i.fa-search,input.search{
   color: #aea5a5;
 }
 
+=======
+>>>>>>> 4f429ddb7ac7fa1c545c1e70c4ce366f39c04a45
 .btn1{
+  display: flex;
   margin-right: 2rem;
 }
+a.nav-link {
+    color: #fff;
+    margin: 0 0.8rem;
+  }
+a.nav-link:hover {
+    color: #06bbcc;
+  }
+a.nav-link.active:hover {
+    color: #06bbcc;
+}  
 
 .navbar-header .navbar a {
   color: #fff;
@@ -100,4 +115,15 @@ i.fa-search,input.search{
 
 .navbar-header .icon i:hover {
   color: #06bbcc;
+}
+
+.logo{
+  margin-left: 40px;
+}
+.links{
+  display: flex;
+  font-size: 20px;
+}
+.links :link{
+  padding-right: 40px;
 }

@@ -9,6 +9,10 @@
     transition: .5s;
 }
 
+.single-package-item p{
+    font-size: 15px;
+    text-align: left;
+}
 .single-package-item-txt {
     padding: 0 25px;
 }

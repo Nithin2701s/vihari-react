@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import UserAvatar from '../../Assets/User_avatar.jpg'
+import UserAvatar from '../Assets/User_avatar.jpg'
 import { Link } from 'react-router-dom';
-import AdminNavbar from "./AdminNavbar";
+import AdminNavbar from "../components/UI/AdminNavbar";
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
 
@@ -17,7 +17,7 @@ const AllUsers = () => {
   const handleDeleteUser = (userId) => {
     const confirmDelete = window.confirm('Are you sure you want to delete this user?');
     if (confirmDelete) {
-    fetch(`http://localhost:8000/users/${userId}`, {
+      fetch(`http://localhost:8000/users/${userId}`, {
         method: "DELETE",
       })
         .then((res) => {
@@ -27,24 +27,24 @@ const AllUsers = () => {
         .catch((err) => {
           console.log(err.message);
         });
-      }
+    }
   };
 
   return (
-    
+
     <div>
-        <AdminNavbar/>
-        <div>
+      <AdminNavbar />
+      <div>
         <h1>User Details</h1>
       </div>
       <Link to="/admindb/adduser">
-        <button className="addnew btn btn-success" type="button">
-          <i className="fa fa-user-plus"></i>&nbsp; Add New User
+        <button className="addnew btn btn-success" style={{ fontSize: '15px' }} type="button">
+          <i className="fa fa-user-plus" ></i>&nbsp; Add New User
         </button>
       </Link>
       <hr />
-      {users.length===0 && (<h1>No Users Found</h1>)}
-      {users.map((user,index) => (
+      {users.length === 0 && (<h1>No Users Found</h1>)}
+      {users.map((user, index) => (
         <div className="row col-md-12 justify-content-center" key={user.id}>
           <div className="col-md-1"></div>
           <div className="col-md-10" id={`user-item-${user._id}`}>
@@ -57,26 +57,26 @@ const AllUsers = () => {
                   alt="Cannot display"
                 />
               </div>
-              <div className="item-content col-md-6">
+              <div className="item-content col-md-6 userdetails">
                 <div>
-                  <h3>Student {index+1}</h3>
+                  <h3>Student {index + 1}</h3>
                 </div>
                 <div>
-                  <b>Firstname:</b> {user.firstName}
+                  <p>Firstname: {user.firstName}</p>
                 </div>
                 <div>
-                  <b>Lastname:</b> {user.lastName}
+                  <p>Lastname: {user.lastName}</p>
                 </div>
                 <div>
-                  <b>Email:</b> {user.email}
+                  <p>Email: {user.email}</p>
                 </div>
-                
+
               </div>
               <div className="col-md-1">
                 <div>
                   <button
                     type="button"
-                    className="delete-user-btn btn btn-danger"
+                    className="delete-user-btn btn btn-danger" style={{ fontSize: '15px' }}
                     data-user-id={user.id}
                     onClick={() => handleDeleteUser(user.id)}
                   >

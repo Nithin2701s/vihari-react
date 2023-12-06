@@ -12,13 +12,16 @@ import Layout from './components/UI/Layout';
 
 import Tours from './pages/Tours';
 
-import AddBus from './components/UI/AddBus';
-import AllBuses from './components/UI/AllBuses';
-import EditBus from './components/UI/EditBus';
-import AllUsers from './components/UI/AllUsers';
-import AddUser from './components/UI/AddUser';
+import AddBus from './pages/AddBus';
+import AllBuses from './pages/AllBuses';
+import EditBus from './pages/EditBus';
+import AllUsers from './pages/AllUsers';
+import AddUser from './pages/AddUser';
+import About from './pages/About';
+import Gallery from './components/UI/Gallery';
 
 import BusList from './components/UI/BusList';
+<<<<<<< HEAD
 import AddTour from './components/UI/AddTour';
 import AllTours from './components/UI/AllTours';
 import EditTour from './components/UI/EditTour';
@@ -26,6 +29,15 @@ import TourDetails from './components/UI/TourDetails';
 import AddPlace from './components/UI/AddPlace';
 import BusState from './context/bus/BusState';
 import PassengerDetails from './components/UI/PassengerDetails';
+=======
+import AddTour from './pages/AddTour';
+import AllTours from './pages/AllTours';
+import EditTour from './pages/EditTour';
+import TourDetails from './pages/TourDetails';
+import AddPlace from './pages/AddPlace';
+import BookTour from './pages/BookTour';
+import Contact from './pages/Contact';
+>>>>>>> 4f429ddb7ac7fa1c545c1e70c4ce366f39c04a45
 
 function App() {
   return (
@@ -38,9 +50,13 @@ function App() {
           <Route exact path='/login' element={ <Login/>}/>
           <Route exact path='/layout' element={ <Layout/>}/>
           <Route exact path='/tours' element={<Tours/>}/>
+          <Route exact path='/Gallery' element={<Gallery/>}/>
           <Route exact  path='/buses' element={<BusList/>}/>
+<<<<<<< HEAD
           <Route exact  path='/passengers' element={<PassengerDetails/>}/>
 
+=======
+>>>>>>> 4f429ddb7ac7fa1c545c1e70c4ce366f39c04a45
           <Route exact path='/admindb/allbuses' element={<AllBuses/>} />
           <Route exact path='/admindb/allusers' element={<AllUsers/>} />
           <Route exact path='/admindb/alltours' element={<AllTours/>}/>
@@ -49,9 +65,11 @@ function App() {
           <Route exact path='/admindb/addtour' element={<AddTour/>}/>
           <Route exact path='/admindb/addplace/:id' element={<AddPlace/>}/>
           <Route exact path="/admindb/editbus/:id" element={ <EditBus/>}/>
+          <Route exact path='/about' element={<About/>}/>
           <Route exact path="/admindb/edittour/:id" element={ <EditTour/>}/>
           <Route exact path="/admindb/opentour/:id" element={ <TourDetails/>}/>
-
+          <Route exact path='/admindb/booktour/:id' element={ <BookTour/>}/>
+          <Route exact path='/contact' element={ <Contact/>}/>
         </Routes>
     </Router>
     </UserState>

@@ -1,62 +1,31 @@
 import React from 'react'
 import '../CSS/Navbar.css'
-import {Link, useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const Navbar = () => {
-   const navigate =useNavigate()
-    return (
-      <nav className="navbar  bg-dark navbar-dark">
-      <div className="container-fluid">
-        <Link className="navbar-brand logo" to="/"><span>V</span>ihari</Link>
+  const navigate = useNavigate()
+  return (
+    <nav className="navbar bg-dark navbar-dark">
+      <div className="container-fluid" style={{ height: '60px' }}>
+        <Link className="navbar-brand logo" to="/"><span style={{ fontSize: '25px' }}>Vihari</span></Link>
         <form className="d-flex mx-5" role="search">
-        <input name="tname" className="form-control me-2 search" type="search" placeholder="Search Tours" aria-label="Search"
-        id="header-search-bar" />
-      <button className="btn1" type="submit" style={{color: '#06bbcc',backgroundColor: 'transparent'}}>
-        <i className="fa fa-search"></i>
-      </button>
-          </form>
-            <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-            <i className="fas fa-hamburger" style={{color: '#bbbbbb'}}></i>
-    </button>
-        <div className="offcanvas offcanvas-end text-bg-dark" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-      <div className="offcanvas-header">
-        <h4 className="offcanvas-title" id="offcanvasDarkNavbarLabel">VIHARI</h4>
-        <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div className="offcanvas-body">
-        <ul className="navbar-nav justify-content-end  flex-grow-1 pe-3">
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Link</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Destination</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/Tours">Tours</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/Services">Services</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/Reviews">Review</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">About</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Contact</Link>
-            </li>
-            <li className="nav-item">
-              {!localStorage.token?<Link className="nav-link" to="/login"><i className="fa fa-user mx-2" aria-hidden="true" id="login-btn"></i>Login</Link>:<Link className="nav-link" to="/" onClick={()=>{localStorage.removeItem('token'); navigate('/')}}><i className="fa fa-sign-out mx-2" aria-hidden="true" id="login-btn" ></i>Logout</Link>}
-            </li>
-          </ul>
+          <input name="tname" className="form-control me-2 search" style={{ borderRadius: '15px', width: '200px' }} type="search" placeholder="Search Tours" aria-label="Search"
+            id="header-search-bar" />
+          <button className="btn1" type="submit" style={{ color: '#06bbcc', backgroundColor: 'transparent', height: '30px', width: '80px', fontSize: '20px' }}>
+            <i className="fa fa-search"></i>
+          </button>
+        </form>
+        <div className='links'>
+          <Link to="/" class="nav-item nav-link">Home</Link>
+          <Link to="/tours" class="nav-item nav-link">Tours</Link>
+          <Link to="/about" class="nav-item nav-link">About</Link>
+          <Link to="/contact" class="nav-item nav-link">Contact</Link>
+          <div class="icons">
+            <Link to="/login"><i class="fa fa-user" aria-hidden="true" id="login-btn"></i></Link>
+          </div>
         </div>
       </div>
-      </div>
     </nav>
-    )
+  )
 }
 
 export default Navbar

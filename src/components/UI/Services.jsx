@@ -33,10 +33,10 @@ const Services = () => {
 const ServiceCard = ({ iconClass, title, description }) => {
   return (
     <div className="col-lg-4 col-sm-4 mb-6 services-cards">
-      <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
+      <div className="card service-card shadow-hover rounded-3 text-center align-items-center" >
         <i className={iconClass}></i>
         <h4 className="mb-3">{title}</h4>
-        <p className="mb-0 fw-medium">{description}</p>
+        <p className="mb-0 fw-medium" style={{marginLeft:'20px'}}>{description}</p>
       </div>
     </div>
   );
