@@ -24,10 +24,13 @@ import AllTours from './components/UI/AllTours';
 import EditTour from './components/UI/EditTour';
 import TourDetails from './components/UI/TourDetails';
 import AddPlace from './components/UI/AddPlace';
+import BusState from './context/bus/BusState';
+import PassengerDetails from './components/UI/PassengerDetails';
 
 function App() {
   return (
     <div className="App">
+      <BusState>
       <UserState>
       <Router>
         <Routes>
@@ -36,6 +39,7 @@ function App() {
           <Route exact path='/layout' element={ <Layout/>}/>
           <Route exact path='/tours' element={<Tours/>}/>
           <Route exact  path='/buses' element={<BusList/>}/>
+          <Route exact  path='/passengers' element={<PassengerDetails/>}/>
 
           <Route exact path='/admindb/allbuses' element={<AllBuses/>} />
           <Route exact path='/admindb/allusers' element={<AllUsers/>} />
@@ -51,6 +55,7 @@ function App() {
         </Routes>
     </Router>
     </UserState>
+    </BusState>
     </div>
   );
 }

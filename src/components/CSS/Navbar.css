@@ -7,9 +7,11 @@
   border: none;
   text-decoration: none;
   transition: all 0.2s linear;
-  /* font-size:62.5%; */
+  font-size:62.5%;
 }
-
+input.bus-nav-input{
+font-size: 15px;
+}
 html {
  
   overflow-x: hidden;
@@ -20,7 +22,7 @@ html {
 section {
   padding: 2rem 9%;
 }
-.navbar-brand{
+/* .navbar-brand{
   font-size:30px;
 }
 ul.navbar-nav{
@@ -34,7 +36,7 @@ i.fa-hamburger{
 }
 i.fa-search,input.search{
   font-size: 20px;
-}
+} */
 .navbar-header {
   position: relative;
   top: 0;
