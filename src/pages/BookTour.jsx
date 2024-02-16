@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/UI/Navbar";
-import { Link, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import '../components/CSS/TourDetails.css'
 import "../components/CSS/AllTours.css";
 const BookTour = () => {

@@ -22,7 +22,11 @@ const ticketSchema= new mongoose.Schema({
             type:String,
             required:true
         }
-    }]
+    }],
+    date:{
+        type:Date,
+        required:true
+    }
 });
 
 const Ticket=mongoose.model('Ticket',ticketSchema);

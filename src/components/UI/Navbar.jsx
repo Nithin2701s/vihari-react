@@ -1,8 +1,7 @@
 import React from 'react'
 import '../CSS/Navbar.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 const Navbar = () => {
-  const navigate = useNavigate()
   return (
     <nav className="navbar bg-dark navbar-dark">
       <div className="container-fluid" style={{ height: '60px' }}>
@@ -20,7 +19,8 @@ const Navbar = () => {
           <Link to="/about" className="nav-item nav-link">About</Link>
           <Link to="/contact" className="nav-item nav-link">Contact</Link>
           <div className="icons">
-            <Link to="/login"><i className="fa fa-user" aria-hidden="true" id="login-btn"></i></Link>
+           {localStorage.token==null?<Link to="/login"><i className="fa fa-user" aria-hidden="true" id="login-btn"></i></Link>
+            :<Link to="/" onClick={()=>{localStorage.removeItem('token')}}><i className="fa-solid fa-arrow-right-from-bracket"></i></Link>}
           </div>
         </div>
       </div>

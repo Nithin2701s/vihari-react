@@ -5,7 +5,7 @@ const BusState = (props) => {
     const [selectedSeats, setselectedSeats] = useState({bus:null,seats:[]})
  const updateSeats = (bus,seats)=>{
     setselectedSeats({bus,seats:seats})
-    console.log(selectedSeats)
+    console.log(bus)
  }
  const orderRazorpay = async(price)=>{
   let response = await fetch('http://localhost:4000/order',{

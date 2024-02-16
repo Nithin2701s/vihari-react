@@ -8,7 +8,6 @@ const UserState = (props) => {
     
   // Vrifying user with the inputs
     const verifyUser= async(email,password)=>{
-
       // Verifying user with api call 
         const res = await fetch(`${host}/login`,{
 			method:"POST",

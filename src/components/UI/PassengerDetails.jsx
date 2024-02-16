@@ -1,4 +1,4 @@
-import React, { useContext, useState, useCallback} from 'react';
+import React, { useContext, useState} from 'react';
 import busContext from '../../context/bus/busContext';
 import '../CSS/PassengerDetails.css'
 import Footer from './Footer';
@@ -54,10 +54,11 @@ const PassengerDetails = () => {
     name: "Vihari",
     description: "A travel-site",
     order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of createOrder().
-    handler: function (response) {
+    handler: function async(response) {
       // alert(response.razorpay_payment_id);
       // alert(response.razorpay_order_id);
       // alert(response.razorpay_signature);
+      
       alert('payment successfull')
       navigate('/')
     },
