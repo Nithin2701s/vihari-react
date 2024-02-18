@@ -8,7 +8,7 @@ app.use(cors())
 
 // Routing..
 app.use(require('./routes/auth'))
- 
+app.use(require('./routes/bus'))  
 
 app.get('/',(req,res)=>{
   res.send("Hello World!")

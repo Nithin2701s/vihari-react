@@ -28,7 +28,6 @@ const {updateSearch} = useContext(userContext)
       try {
         const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&countrycodes=IN&q=${query}`);
         const data = await response.json();
-        console.log(data)
         if (data.length > 0) {
           setCities(data.map(result => result.display_name));
         } else {
